@@ -18,9 +18,10 @@ import (
 	"testing"
 	"time"
 
-	checkly "github.com/clockworksoul/checkly-go-sdk"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+
+	checkly "github.com/checkly/checkly-go-sdk"
 )
 
 var wantCheckID = "73d29e72-6540-4bb5-967e-e07fa2c9465e"
@@ -297,6 +298,28 @@ func TestGetCheck(t *testing.T) {
 	}
 	if !cmp.Equal(wantCheck, *gotCheck, ignoreCheckFields) {
 		t.Error(cmp.Diff(wantCheck, *gotCheck, ignoreCheckFields))
+	}
+}
+
+func TestGetChecks(t *testing.T) {
+	wantChecks := []checkly.Check{wantCheck}
+
+	t.Parallel()
+	ts := cannedResponseServer(t,
+		http.MethodGet,
+		"/v1/checks?limit=100&page=1",
+		validateEmptyBody,
+		http.StatusOK,
+		"GetChecks.json",
+	)
+	defer ts.Close()
+	client := checkly.NewClient(ts.URL, "dummy-key", ts.Client(), nil)
+	gotChecks, err := client.GetChecks(context.Background())
+	if err != nil {
+		t.Error(err)
+	}
+	if !cmp.Equal(wantChecks, gotChecks, ignoreCheckFields) {
+		t.Error(cmp.Diff(wantChecks, gotChecks, ignoreCheckFields))
 	}
 }
 

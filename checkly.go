@@ -528,24 +528,33 @@ func (c *client) GetCheck(
 
 // GetChecks returns all check parameters, or an error.
 func (c *client) GetChecks(ctx context.Context) ([]Check, error) {
-	status, res, err := c.apiCall(
-		ctx,
-		http.MethodGet,
-		"checks",
-		nil,
-	)
-	if err != nil {
-		return nil, err
+	var limit, count, page = 100, 100, 1
+	var aggregate = []Check{}
+
+	for limit == count {
+		status, res, err := c.apiCall(
+			ctx,
+			http.MethodGet,
+			fmt.Sprintf("checks?limit=100&page=%d", page),
+			nil,
+		)
+		if err != nil {
+			return nil, err
+		}
+		if status != http.StatusOK {
+			return nil, fmt.Errorf("unexpected response status %d: %q", status, res)
+		}
+		result := []Check{}
+		err = json.NewDecoder(strings.NewReader(res)).Decode(&result)
+		if err != nil {
+			return nil, fmt.Errorf("decoding error for data %s: %v", res, err)
+		}
+		count = len(result)
+		page++
+		aggregate = append(aggregate, result...)
 	}
-	if status != http.StatusOK {
-		return nil, fmt.Errorf("unexpected response status %d: %q", status, res)
-	}
-	result := []Check{}
-	err = json.NewDecoder(strings.NewReader(res)).Decode(&result)
-	if err != nil {
-		return nil, fmt.Errorf("decoding error for data %s: %v", res, err)
-	}
-	return result, nil
+
+	return aggregate, nil
 }
 
 // Deprecated: Use GetHeartbeatMonitor instead.

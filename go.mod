@@ -1,4 +1,4 @@
-module github.com/clockworksoul/checkly-go-sdk
+module github.com/checkly/checkly-go-sdk
 
 go 1.18
 

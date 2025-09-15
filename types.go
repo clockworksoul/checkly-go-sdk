@@ -191,6 +191,11 @@ type Client interface {
 		ID string,
 	) (*Check, error)
 
+	// GetChecks returns all check parameters, or an error.
+	GetChecks(
+		ctx context.Context,
+	) ([]Check, error)
+
 	// Get takes the ID of an existing TCP check, and returns the check
 	// parameters, or an error.
 	//
