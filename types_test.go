@@ -3,7 +3,7 @@ package checkly_test
 import (
 	"testing"
 
-	checkly "github.com/checkly/checkly-go-sdk"
+	checkly "github.com/clockworksoul/checkly-go-sdk"
 )
 
 func TestAlertChannelEmail(t *testing.T) {

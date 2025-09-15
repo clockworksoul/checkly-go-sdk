@@ -526,6 +526,28 @@ func (c *client) GetCheck(
 	return &result, nil
 }
 
+// GetChecks returns all check parameters, or an error.
+func (c *client) GetChecks(ctx context.Context) ([]Check, error) {
+	status, res, err := c.apiCall(
+		ctx,
+		http.MethodGet,
+		"checks",
+		nil,
+	)
+	if err != nil {
+		return nil, err
+	}
+	if status != http.StatusOK {
+		return nil, fmt.Errorf("unexpected response status %d: %q", status, res)
+	}
+	result := []Check{}
+	err = json.NewDecoder(strings.NewReader(res)).Decode(&result)
+	if err != nil {
+		return nil, fmt.Errorf("decoding error for data %s: %v", res, err)
+	}
+	return result, nil
+}
+
 // Deprecated: Use GetHeartbeatMonitor instead.
 func (c *client) GetHeartbeatCheck(
 	ctx context.Context,
