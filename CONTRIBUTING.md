@@ -14,7 +14,7 @@ Hi! We are really excited that you are interested in contributing to Checkly Go 
 
 ## Issue Reporting Guidelines
 
-- Always use [GitHub issues](https://github.com/checkly/checkly-go-sdk/issues/new/choose) to create new issues and select the corresponding issue template.
+- Always use [GitHub issues](https://github.com/clockworksoul/checkly-go-sdk/issues/new/choose) to create new issues and select the corresponding issue template.
 
 ## Pull Request Guidelines
 
@@ -45,7 +45,7 @@ Hi! We are really excited that you are interested in contributing to Checkly Go 
 
 The development branch is `main`. This is the branch that all pull requests should be made against.
 
-> ⚠️ Before you start, is recommended to have a good understanding on how the provider works, the resources it has and its different configurations. Here are the ["getting started"](https://github.com/checkly/checkly-go-sdk#getting-started) guides.
+> ⚠️ Before you start, is recommended to have a good understanding on how the provider works, the resources it has and its different configurations. Here are the ["getting started"](https://github.com/clockworksoul/checkly-go-sdk#getting-started) guides.
 
 ### Pre-requirements
 - [Go](https://go.dev/doc/install) >= 1.18.2

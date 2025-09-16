@@ -13,7 +13,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
 
-	checkly "github.com/checkly/checkly-go-sdk"
+	checkly "github.com/clockworksoul/checkly-go-sdk"
 )
 
 func setupClient(t *testing.T) checkly.Client {

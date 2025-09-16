@@ -1,7 +1,7 @@
 module demo
 
-replace github.com/checkly/checkly-go-sdk => ../
+replace github.com/clockworksoul/checkly-go-sdk => ../
 
 go 1.14
 
-require github.com/checkly/checkly-go-sdk v1.5.6
+require github.com/clockworksoul/checkly-go-sdk v0.0.0-00010101000000-000000000000

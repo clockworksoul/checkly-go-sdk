@@ -1,9 +1,9 @@
 # Checkly Go SDK
 
 ![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)
-[![Tests](https://github.com/checkly/checkly-go-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/checkly/checkly-go-sdk/actions/workflows/test.yml)
-[![GoDoc](https://godoc.org/github.com/checkly/checkly-go-sdk?status.png)](http://godoc.org/github.com/checkly/checkly-go-sdk)
-[![Go Report Card](https://goreportcard.com/badge/github.com/checkly/checkly-go-sdk)](https://goreportcard.com/report/github.com/checkly/checkly-go-sdk)
+[![Tests](https://github.com/clockworksoul/checkly-go-sdk/actions/workflows/test.yml/badge.svg)](https://github.com/clockworksoul/checkly-go-sdk/actions/workflows/test.yml)
+[![GoDoc](https://godoc.org/github.com/clockworksoul/checkly-go-sdk?status.png)](http://godoc.org/github.com/clockworksoul/checkly-go-sdk)
+[![Go Report Card](https://goreportcard.com/badge/github.com/clockworksoul/checkly-go-sdk)](https://goreportcard.com/report/github.com/clockworksoul/checkly-go-sdk)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/checkly/checkly-go-sdk)
 ![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/checkly/checkly-go-sdk?label=Version)
 
@@ -22,7 +22,7 @@ $ go mod init
 
 Then, add the reference of checkly-go-sdk in a Go program using `import`:
 ```go
-import checkly "github.com/checkly/checkly-go-sdk"
+import checkly "github.com/clockworksoul/checkly-go-sdk"
 ```
 
 Run any of the normal go commands (`build/install/test`) and the  Go toolchain will resolve and fetch the  checkly-go-sdk module automatically.
@@ -30,7 +30,7 @@ Run any of the normal go commands (`build/install/test`) and the  Go toolchain w
 Alternatively, you can also explicitly go get the package into a project:
 
 ```bash
-$ go get -u github.com/checkly/checkly-go-sdk
+$ go get -u github.com/clockworksoul/checkly-go-sdk
 ```
 
 ## Getting Started
@@ -101,14 +101,14 @@ client.CreateCheck(ctx, browserCheck)
 >  A complete example program! You can see an example program which creates a Checkly check in the [demo](demo/main.go) folder.
 
 ## Questions
-For questions and support please open a new  [discussion](https://github.com/checkly/checkly-go-sdk/discussions). The issue list of this repo is exclusively for bug reports and feature/docs requests.
+For questions and support please open a new  [discussion](https://github.com/clockworksoul/checkly-go-sdk/discussions). The issue list of this repo is exclusively for bug reports and feature/docs requests.
 
 ## Issues
-Please make sure to respect issue requirements and choose the proper [issue template](https://github.com/checkly/checkly-go-sdk/issues/new/choose) when opening an issue. Issues not conforming to the guidelines may be closed.
+Please make sure to respect issue requirements and choose the proper [issue template](https://github.com/clockworksoul/checkly-go-sdk/issues/new/choose) when opening an issue. Issues not conforming to the guidelines may be closed.
 
 ## Contribution
-Please make sure to read the [Contributing Guide](https://github.com/checkly/checkly-go-sdk/blob/main/CONTRIBUTING.md) before making a pull request.
+Please make sure to read the [Contributing Guide](https://github.com/clockworksoul/checkly-go-sdk/blob/main/CONTRIBUTING.md) before making a pull request.
 
 ## License
 
-[MIT](https://github.com/checkly/checkly-go-sdk/blob/main/LICENSE)
+[MIT](https://github.com/clockworksoul/checkly-go-sdk/blob/main/LICENSE)

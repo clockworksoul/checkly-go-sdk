@@ -9,7 +9,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/checkly/checkly-go-sdk"
+	"github.com/clockworksoul/checkly-go-sdk"
 )
 
 var alertSettings = checkly.AlertSettings{
@@ -116,7 +116,7 @@ var browserCheck = checkly.Check{
 	DoubleCheck:    false,
 	SSLCheck:       true,
 	SSLCheckDomain: "www.acme.com",
-	Locations:    []string{"eu-west-1"},
+	Locations:      []string{"eu-west-1"},
 	AlertSettings:  alertSettings,
 	Script: `const assert = require("chai").assert;
   const puppeteer = require("puppeteer");
